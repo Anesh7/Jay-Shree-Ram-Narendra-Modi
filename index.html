@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modi Ji Support</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #FF9933 0%, #FFFFFF 50%, #138808 100%); /* Tiranga Gradient Theme */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            background-color: white;
+            width: 90%;
+            max-width: 380px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .image-box {
+            width: 100%;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Text size chhota kar diya hai (Smaller text) */
+        .message {
+            font-size: 16px; /* Reduced size */
+            color: #d32f2f;
+            font-weight: 600;
+            margin-bottom: 25px;
+            line-height: 1.5;
+            padding: 0 10px;
+        }
+
+        /* Single Share Button */
+        .share-btn {
+            background-color: #25D366; /* WhatsApp Green */
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
+            transition: transform 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            text-decoration: none;
+        }
+
+        .share-btn:active {
+            transform: scale(0.98);
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- Image Section -->
+        <div class="image-box">
+            <!-- Ensure image name is Modi.gif -->
+            <img src="Modi.gif" alt="Modi Ji Animation">
+        </div>
+
+        <!-- Smaller Text Message -->
+        <p class="message">
+            "Agar aap chahte ho Narendra Modi election mein Jeet jaaye, to is message ko apne 10 doston ke saath share karein, Jay Shri Ram 🚩."
+        </p>
+
+        <!-- Single Share Button -->
+        <button class="share-btn" onclick="shareNow()">
+            WhatsApp Par Share Karein 📲
+        </button>
+
+        <div class="footer">Thank you for your support 🙏</div>
+    </div>
+
+    <script>
+        function shareNow() {
+            // Text to share
+            var text = "Agar aap chahte ho Narendra Modi election mein Jeet jaaye, to is message ko share karein!";
+            
+            // Get Current Page Link
+            var url = window.location.href;
+            
+            // Final Message
+            var finalMsg = text + " " + url;
+
+            // Open WhatsApp directly
+            var whatsappUrl = "https://api.whatsapp.com/send?text=" + encodeURIComponent(finalMsg);
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+
+</body>
+</html>
